@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<form style="padding:168px 30px 188px 500px" action="@Url.Action("validate", "Home")" method="post">
+    @if (ViewBag.valid == false)
+    {
+        <div style="color:red; padding-left:70px; padding-bottom: 20px">
+            Incorrect UserName or password
+        </div>
+    }
+    <div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>User Name</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="username" id="username" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b> Password </b>
+            </div>
+            <div class="col-md-2">
+                <input type="password" class="textbox" name="password" id="password" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-2">
+                <b> <input type="submit" value="Login" name="submit" id="submit" /></b>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<footer style="text-align:right">
+    <p style="padding-right:20px">&copy; @DateTime.Now.Year - Developed by <b>DeadLockers</b></p>
+</footer>

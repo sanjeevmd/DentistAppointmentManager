@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "DentistRegistration";
+}
+
+<form style="padding-top:7px;" action="@Url.Action("DentistRegistration", "Dentist")" method="post">
+    <div style="background-color:grey;height:27px">
+        <table width="100%">
+            <tr>
+                <td width="33%" align="left">
+                    <input type="button" style="padding-top:2px;border-radius:6px;width:100px;"
+                           onclick="location.href = '@Url.Action("Desktop", "Home")'" value="Back" />
+                </td>
+                <td align="center">
+                    <b style="font-size:18px;color:white"> Dentist Registration</b>
+                </td>
+                <td width="33%" align="right">
+                    <input type="submit" style="padding-top:2px;border-radius:6px;width:100px;"
+                           value="Save" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    @Html.Hidden("dentistID")
+    <div style="padding-left:30px;padding-top:45px">
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>First Name</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="firstName" id="firstName" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Last Name</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="lastName" id="lastName" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Middle Name</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="middleName" id="middleName" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Gender</b>
+            </div>
+            <div class="col-md-2">
+                <select id="gender" name="gender">
+                    <option value="PS">Please Select</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="T">Transgender</option>
+                    <option value="O">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Contact Number</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="contactNumber" id="contactNumber" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Email ID</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="emailID" id="emailID" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Apartment No.</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="aptNumber" id="aptNumber" />
+            </div>
+        </div>
+
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Street</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="street" id="street" />
+            </div>
+        </div>
+
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>City</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="city" id="city" />
+            </div>
+        </div>
+
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>State</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="state" id="state" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Zip Code</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="zipcode" id="zipcode" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Date of Joining</b>
+            </div>
+            <div class="col-md-2">
+                <input type="date" class="textbox" name="doj" id="doj" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Username</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="userName" id="userName" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Password</b>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="textbox" name="password" id="password" />
+            </div>
+        </div>
+</form>

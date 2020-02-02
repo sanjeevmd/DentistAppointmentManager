@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "Desktop";
+}
+
+<table style="padding-top:1400px;" height="540px" width="1250px">
+    <tr>
+
+        <td align="center" width="33%">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;"
+                   onclick="location.href='@Url.Action("PatientRegistration", "Patient")'"
+                   class="fas fa-users fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Patient Registration </b>
+            }
+            else
+            {
+                <i style="color:darkslategrey;"
+                   onclick="location.href='@Url.Action("OpenAppointment", "Appointment")'"
+                   class="fas fa-calendar-check fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Open Appointments </b>
+            }
+
+        </td>
+
+        <td align="center" width="33%">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;"
+                   onclick="location.href='@Url.Action("AppointmentSearch", "Appointment")'"
+                   class="fas fa-calendar-check fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Book Appointment </b>
+            }
+            else
+            {
+                <i style="color:darkslategrey;" class="fas fa-calendar-alt fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Schedule </b>
+            }
+        </td>
+        <td align="center" width="33%">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;"
+                   onclick="location.href='@Url.Action("DentistRegistration", "Dentist")'"
+                   class="fas fa-users fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Dentist Registration </b>
+            }
+
+
+            else
+            {
+                <i style="color:darkslategrey;" class="fas fa-user-edit fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Update Details </b>
+            }
+        </td>
+
+    </tr>
+    <tr>
+        <td align="center">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;" class="fas fa-hospital-alt fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Locations</b>
+            }
+            else
+            {
+                <i style="color:darkslategrey;" class="fas fa-id-badge fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">License</b>
+            }
+        </td>
+        <td align="center">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;" class="fas fa-x-ray fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Equipments</b>
+            }
+            else
+            {
+                <i style="color:darkslategrey;" class="fas fa-briefcase-medical fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Treatments</b>
+            }
+        </td>
+        <td align="center">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;" class="fas fa-syringe fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Supplies & Inventories</b>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;" class="fas fa-warehouse fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Vendors</b>
+            }
+        </td>
+        <td align="center">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;"
+                   onclick="location.href='@Url.Action("Billing", "Billing")'"
+                   class="fas fa-file-invoice fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Billing</b>
+            }
+        </td>
+        <td align="center">
+            @if (ViewBag.Role == "Admin")
+            {
+                <i style="color:darkslategrey;"
+                   onclick="location.href='@Url.Action("AppointmentCancel", "Appointment")'"
+                   class="fas fa-clipboard-list fa-6x zoom"></i>
+                <br />
+                <br>
+                <b class="color">Appointments</b>
+            }
+        </td>
+    </tr>
+</table>
+

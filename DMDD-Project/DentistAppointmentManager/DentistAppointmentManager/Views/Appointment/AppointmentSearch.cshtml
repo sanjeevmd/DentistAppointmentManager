@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DentistAppointmentManager.Models.Patients>
+
+@{
+    ViewBag.Title = "AppointmentSearch";
+}
+
+<form style="padding-top:7px;" action="@Url.Action("CreateAppointment", "Appointment")" method="post">
+    <div style="background-color:grey;height:27px">
+        <table width="100%">
+            <tr>
+                <td width="15%" align="left">
+                    <input type="button" style="padding-top:2px;border-radius:6px;width:100px;"
+                           onclick="location.href = '@Url.Action("Desktop", "Home")'" value="Back" />
+                </td>
+                <td width="69%" align="center">
+                    <b style="font-size:18px;color:white"> Patient Search</b>
+                </td>
+                <td width="8%" align="right">
+                    <input style="padding-top:2px;border-radius:6px;width:100px;" type="button" id="Submit"
+                           name="Delete" value="Delete" onclick="deletePatient()" />
+                </td>
+                <td width="8%" align="right">
+                    <input type="submit" style="padding-top:2px;border-radius:6px;width:100px;"
+                           value="Select" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="padding-top:7px;padding-bottom:7px">
+        <table width="100%" style="height:27px;">
+            <tr>
+                <td width="55%" align="right">
+                    First Name
+                    <input type="text" id="Search" name="Search" />
+                </td>
+                <td width="45%" style="padding-left: 5px" align="left">
+                    <input style="padding-top:2px;border-radius:6px;width:100px;" type="button" id="Submit"
+                           name="Submit" value="Search" onclick="loadPatients()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.patientHRN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.middleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mailID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dob)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.RadioButton("Patient", item.patientID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.patientHRN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.middleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mailID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dob)
+                </td>
+            </tr>
+        }
+    </table>
+</form>

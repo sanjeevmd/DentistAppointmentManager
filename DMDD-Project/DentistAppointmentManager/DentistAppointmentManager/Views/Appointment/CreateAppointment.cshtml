@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "CreateAppointment";
+}
+
+<form style="padding-top:7px;" action="@Url.Action("BookingAppointment", "Appointment")" method="post">
+    <div style="background-color:grey;height:28px">
+        <table width="100%">
+            <tr>
+                <td width="33%" align="left">
+                    <input type="button" style="padding-top:2px;border-radius:6px;width:100px;"
+                           onclick="location.href = '@Url.Action("AppointmentSearch", "Appointment")'" value="Back" />
+                </td>
+                <td width="33%" align="center">
+                    <b style="font-size:18px;color:white"> Book Appointment</b>
+                </td>
+                <td width="33%" align="right">
+                    <input type="submit" style="padding-top:2px;border-radius:6px;width:100px;"
+                           value="Book" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="padding:168px 30px 188px 500px">
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Dentist</b>
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownList("Dentist", (IEnumerable
+                  <SelectListItem>)ViewData["DentistDropDown"])
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Location</b>
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownList("Location", (IEnumerable
+                                <SelectListItem>)ViewData["LocationDropDown"])
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Date</b>
+            </div>
+            <div class="col-md-2">
+                <input type="date" class="textbox" name="Date" id="Date" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Start Time</b>
+            </div>
+            <div class="col-md-2">
+                <input type="time" class="textbox" name="StartTime" id="StartTime" />
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>End Time</b>
+            </div>
+            <div class="col-md-2">
+                <input type="time" class="textbox" name="EndTime" id="EndTime" />
+            </div>
+        </div>
+    </div>
+</form>

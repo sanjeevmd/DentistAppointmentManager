@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Book an appointment</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/custom")
+    <script src="https://kit.fontawesome.com/d26581f32f.js" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript"></script>
+    @Scripts.Render("~/bundles/customScript")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <table width="100%">
+                    <tr>
+                        <td align="right" width="62%">
+                            <h3 style="color:white; text-align:right; font-family:'Times New Roman'">
+                                <i class="fas fa-tooth"></i>
+                                <b>Dentist Appointment Booking</b>
+                            </h3>
+                        </td>
+                        <td align="right" width="34%">
+                            <span style="text-align:center;color:white;">Hi, @User.Identity.Name</span>
+                        </td>
+                        <td align="right" width="4%" style="padding-right:10px">
+                            <a onclick="logout()">
+                                <i class="fas fa-power-off fa-2x change" style="text-align:right;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            }
+            else
+            {
+                <h3 style="color:white; text-align:center; font-family:'Times New Roman'">
+                    <i class="fas fa-tooth"></i>
+                    <b> Dentist Appointment Booking</b>
+                </h3>
+            }
+        </div>
+    </div>
+
+    <div class="body">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿.textbox {
+    border: 1px solid #ccc;
+}
+
+.rowCustom {
+    padding-bottom: 8px;
+}
+
+.fas {
+    color: white;
+}
+
+    .fas:hover {
+        cursor: pointer;
+    }
+
+.change:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.color {
+    color: darkslategrey;
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+}
+
+    .zoom:hover {
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+.body {
+    overflow-x: hidden;
+    width: 100%;
+}

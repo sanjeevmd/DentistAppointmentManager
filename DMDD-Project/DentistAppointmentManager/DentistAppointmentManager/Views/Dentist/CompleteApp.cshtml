@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "CompleteApp";
+}
+<form style="padding-top:7px;" action="@Url.Action("CompletedApp", "Dentist")" method="post">
+    <div>
+        <div style="background-color:grey;height:27px">
+            <table width="100%">
+                <tr>
+                    <td width="33%" align="left">
+                        <input type="button" style="padding-top:2px;border-radius:6px;width:100px;"
+                               onclick="location.href = '@Url.Action("Desktop", "Home")'" value="Back" />
+                    </td>
+                    <td width="33%" align="center">
+                        <b style="font-size:18px;color:white"> Treatments</b>
+                    </td>
+                    <td width="33%" align="right">
+                        <input type="submit" style="padding-top:2px;border-radius:6px;width:100px;"
+                               value="Select" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="padding:168px 30px 188px 500px">
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Treatment</b>
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownList("Treatment", (IEnumerable
+                  <SelectListItem>)ViewData["TreatmentDropDown"])
+            </div>
+        </div>
+        <div class="row rowCustom">
+            <div class="col-md-2">
+                <b>Tooth</b>
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownList("Tooth", (IEnumerable
+                                <SelectListItem>)ViewData["ToothtDropDown"], "Select Tooth")
+            </div>
+        </div>
+    </div>
+</form>

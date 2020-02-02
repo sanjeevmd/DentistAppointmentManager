@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DentistAppointmentManager.Models.Invoice>
+
+@{
+    ViewBag.Title = "generateBill";
+}
+
+<h2>Invoice</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            S No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.treatments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dentist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DentistCost)
+        </th>
+    </tr>
+    @{
+        int sno = 0;
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{ sno++; }
+                @sno
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.treatments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dentist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DentistCost)
+            </td>
+        </tr>
+                    }
+</table>
+@{ 
+    decimal cost = Model.Sum(i => i.cost);
+    decimal dencost = Model.Sum(i => i.DentistCost);
+    decimal total = cost + dencost;
+}
+<div>
+    <b> Total Cost </b> : 
+    @total
+</div>
